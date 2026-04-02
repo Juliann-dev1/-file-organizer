@@ -18,8 +18,8 @@ extensiones_documentos = (".txt", ".pdf", ".doc", ".docx", ".odt", ".rtf", ".md"
 extensiones_fotos = (".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".webp", ".svg")
 extensiones_videos = (".mp4", ".avi", ".mkv", ".mov", ".wmv", ".flv", ".webm", ".mpeg")
 extensiones_musica = (".mp3", ".wav", ".flac", ".aac", ".ogg", ".wma", ".m4a")
-
-archivos = os.listdir()
+ruta = input("Enter the folder path: ")
+archivos = os.listdir(ruta)
 
 for archivo in archivos:
     if archivo.endswith(extensiones_documentos):
