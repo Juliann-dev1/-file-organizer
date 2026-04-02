@@ -20,18 +20,22 @@ extensiones_videos = (".mp4", ".avi", ".mkv", ".mov", ".wmv", ".flv", ".webm", "
 extensiones_musica = (".mp3", ".wav", ".flac", ".aac", ".ogg", ".wma", ".m4a")
 ruta = input("Enter the folder path: ")
 archivos = os.listdir(ruta)
-
 for archivo in archivos:
+    ruta_completa = os.path.join(ruta, archivo)
+
     if archivo.endswith(extensiones_documentos):
-        shutil.move(archivo,documentos_carpeta)
+        shutil.move(ruta_completa, documentos_carpeta)
         print(f"Moved file: {archivo} to folder {documentos_carpeta}")
+
     elif archivo.endswith(extensiones_musica):
-        shutil.move(archivo, musica_carpeta)
+        shutil.move(ruta_completa, musica_carpeta)
         print(f"Moved file: {archivo} to folder {musica_carpeta}")
+
     elif archivo.endswith(extensiones_fotos):
-        shutil.move(archivo,fotos_carpeta)
+        shutil.move(ruta_completa, fotos_carpeta)
         print(f"Moved file: {archivo} to folder {fotos_carpeta}")
+
     elif archivo.endswith(extensiones_videos):
-        shutil.move(archivo,videos_carpeta)
+        shutil.move(ruta_completa, videos_carpeta)
         print(f"Moved file: {archivo} to folder {videos_carpeta}")
 print("All operations completed successfully!")
